@@ -1,16 +1,12 @@
 import streamlit as st
 from langchain.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 def getLLamaresponse(input_text, no_words, blog_style):
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash",
                                  verbose=True,
                                  temperature=0.5,
-                                 google_api_key=os.getenv("GOOGLE_API_KEY"))
+                                 google_api_key=st.secrets["GOOGLE_API_KEY"])
 
     template = """
         Write a blog for {blog_style} job profile for a topic {input_text}
