@@ -5,9 +5,6 @@ from langchain_core.output_parsers import StrOutputParser
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from translate import Translator
-from dotenv import load_dotenv
-
-load_dotenv()
 
 
 my_dict = {'af': 'afrikaans', 'sq': 'albanian', 'am': 'amharic', 'ar': 'arabic', 'hy':
@@ -36,7 +33,7 @@ my_dict = {'af': 'afrikaans', 'sq': 'albanian', 'am': 'amharic', 'ar': 'arabic',
 llm=ChatGoogleGenerativeAI(model="gemini-1.0-pro",
                                verbose=True,
                                temperature=0.5,
-                               google_api_key=os.getenv("GOOGLE_API_KEY"))
+                               google_api_key=st.secrets["GOOGLE_API_KEY"])
 
 # Define the prompt template
 prompt_template_str = '''You will be provided with a youtube video transcript.
