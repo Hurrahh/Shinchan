@@ -2,12 +2,8 @@ import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from dotenv import load_dotenv
 import streamlit as st
-load_dotenv()
 
-os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
-os.environ["LANGCHAIN_TRACING_V2"] = "true"
 
 history = []
 def Generate(text):
@@ -21,7 +17,7 @@ def Generate(text):
     llm=ChatGoogleGenerativeAI(model="gemini-1.5-pro-latest",
                                verbose=True,
                                temperature=1,
-                               google_api_key=os.getenv("GOOGLE_API_KEY"))
+                               google_api_key=st.secrets["GOOGLE_API_KEY"])
 
     output_parser = StrOutputParser()
     chain = prompt1 | llm | output_parser
