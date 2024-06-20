@@ -1,6 +1,6 @@
 streamlit
-google-generativeai
-dotenv
 pillow
 langchain
 langchain_community
+google-generativeai 
+translate
