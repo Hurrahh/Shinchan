@@ -3,7 +3,7 @@ import streamlit as st
 def show():
     st.title("About Us")
     st.write(" **Action beam hahahahahaha** ")
-    st.image("images/shinchan.jpg", width=100)
+    st.image("./images/shinchan.jpg", width=100)
     st.markdown("<hr>", unsafe_allow_html=True)
     st.text('''
     Hello, I'm Shinchan Nohara
