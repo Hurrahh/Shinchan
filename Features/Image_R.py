@@ -2,12 +2,9 @@ from PIL import Image
 import io
 import streamlit as st
 import google.generativeai as genai
-import os
-from dotenv import load_dotenv
 
-load_dotenv()
 
-genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
+genai.configure(api_key=os.st.secrets["GOOGLE_API_KEY"])
 def get_image_bytes(image_file):
     image_path = image_file
     image = Image.open(image_path)
