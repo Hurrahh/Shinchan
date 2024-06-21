@@ -50,6 +50,6 @@ def show():
         # st.image(file,width=300)
         if st.button("Generate") and file:
             with st.spinner("Generating caption..."):
-                prompt = "Craft a captivating caption for this image suitable for social media posts or stories on platforms like Instagram and Facebook."
+                prompt = "Craft a captivating caption for this image suitable for social media posts or stories on platforms like Instagram and Facebook.Make is short but unique and creative, also add emojis if needed."
                 desc = generate_desc(file,prompt)
                 st.write(desc)
