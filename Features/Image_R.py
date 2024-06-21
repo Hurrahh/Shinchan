@@ -4,7 +4,7 @@ import streamlit as st
 import google.generativeai as genai
 
 
-genai.configure(api_key=os.st.secrets["GOOGLE_API_KEY"])
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 def get_image_bytes(image_file):
     image_path = image_file
     image = Image.open(image_path)
