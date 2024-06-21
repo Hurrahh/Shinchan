@@ -5,3 +5,4 @@ langchain_community
 google-generativeai 
 translate
 langchain_google_genai
+PyPDF2
