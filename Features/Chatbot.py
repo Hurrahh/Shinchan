@@ -37,7 +37,7 @@ def show():
             st.write(response)
 
         with open('user.txt','a') as file:
-            file.write({'user':chat_input,'assistant':response}\n)
+            file.write(f'user -- {chat_input}, AI -- {response}\n')
 
 
 
