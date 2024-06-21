@@ -28,7 +28,7 @@ pages = {
     "Blog Generation": Blog
 }
 
-st.sidebar.image("images/GEN.png", use_column_width=True)
+st.sidebar.image("images/main.png", use_column_width=True)
 st.sidebar.title("Shinchan")
 page = st.sidebar.selectbox("Select Feature", list(pages.keys()))
 
