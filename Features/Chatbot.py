@@ -4,7 +4,6 @@ from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
 import streamlit as st
 
-history = []
 
 def Generate(text):
     prompt = ChatPromptTemplate.from_messages(
@@ -36,7 +35,9 @@ def show():
             response = Generate(chat_input)
         with st.chat_message(name='AI'):
             st.write(response)
-        history.append({'user':chat_input,'assistant':response})
+
+        with open('user.txt','a') as file:
+            file.write({'user':chat_input,'assistant':response}\n)
 
 
 
