@@ -4,3 +4,4 @@ langchain
 langchain_community
 google-generativeai 
 translate
+faiss-gpu
